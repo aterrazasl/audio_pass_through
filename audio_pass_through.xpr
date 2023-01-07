@@ -87,6 +87,14 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/vhdl/adau1761_i2s.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Users/aterraza/Desktop/VHDLwhiz/audio_pass_through/vhdl/adau1761_i2s.vhd"/>
+          <Attr Name="ImportTime" Val="1672974074"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/bd/top/top.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -108,8 +116,8 @@
         <CompFileExtendedInfo CompFileName="top.bd" FileRelPathName="ip/top_ila_0_0/top_ila_0_0.xci">
           <Proxy FileSetName="top_ila_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="top.bd" FileRelPathName="ip/top_auto_pc_0/top_auto_pc_0.xci">
-          <Proxy FileSetName="top_auto_pc_0"/>
+        <CompFileExtendedInfo CompFileName="top.bd" FileRelPathName="ip/top_adau1761_i2s_0_0/top_adau1761_i2s_0_0.xci">
+          <Proxy FileSetName="top_adau1761_i2s_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/top/hdl/top_wrapper.vhd">
@@ -198,9 +206,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="top_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_auto_pc_0" RelGenDir="$PGENDIR/top_auto_pc_0">
+    <FileSet Name="top_adau1761_i2s_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/top_adau1761_i2s_0_0" RelGenDir="$PGENDIR/top_adau1761_i2s_0_0">
       <Config>
-        <Option Name="TopModule" Val="top_auto_pc_0"/>
+        <Option Name="TopModule" Val="top_adau1761_i2s_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -296,7 +304,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="top_auto_pc_0" Part="xc7z010clg400-1" ConstrsSet="top_auto_pc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/top_auto_pc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_auto_pc_0_synth_1">
+    <Run Id="top_adau1761_i2s_0_0_synth_1" Type="Ft3:Synth" SrcSet="top_adau1761_i2s_0_0" Part="xc7z010clg400-1" ConstrsSet="top_adau1761_i2s_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/top_adau1761_i2s_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_adau1761_i2s_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -423,7 +431,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="top_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="top_auto_pc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_auto_pc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_auto_pc_0_impl_1">
+    <Run Id="top_adau1761_i2s_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="top_adau1761_i2s_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="top_adau1761_i2s_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/top_adau1761_i2s_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
           <Desc>Default settings for Implementation.</Desc>

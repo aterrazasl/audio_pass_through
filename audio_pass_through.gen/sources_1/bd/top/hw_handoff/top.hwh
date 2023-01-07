@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan  6 11:56:28 2023" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jan  6 21:56:58 2023" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo:part0:2.0" DEVICE="7z010" NAME="top" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -12,6 +12,7 @@
     <PORT DIR="I" NAME="ac_bclk" SIGIS="undef" SIGNAME="External_Ports_ac_bclk">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila" PORT="probe1"/>
+        <CONNECTION INSTANCE="adau1761_i2s_0" PORT="bclk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="ac_reclrc" SIGIS="undef" SIGNAME="External_Ports_ac_reclrc">
@@ -21,13 +22,13 @@
     </PORT>
     <PORT DIR="I" NAME="ac_recdat" SIGIS="undef" SIGNAME="External_Ports_ac_recdat">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="External_Ports" PORT="ac_pbdat"/>
         <CONNECTION INSTANCE="ila" PORT="probe4"/>
+        <CONNECTION INSTANCE="adau1761_i2s_0" PORT="sdata_in"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="ac_pbdat" SIGIS="undef" SIGNAME="External_Ports_ac_recdat">
+    <PORT DIR="O" NAME="ac_pbdat" SIGIS="undef" SIGNAME="adau1761_i2s_0_sdata_out">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="External_Ports" PORT="ac_recdat"/>
+        <CONNECTION INSTANCE="adau1761_i2s_0" PORT="sdata_out"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="0" NAME="ac_muten" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
@@ -38,6 +39,7 @@
     <PORT DIR="I" NAME="ac_pblrc" SIGIS="undef" SIGNAME="External_Ports_ac_pblrc">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila" PORT="probe2"/>
+        <CONNECTION INSTANCE="adau1761_i2s_0" PORT="lrclk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="ac_scl_i" SIGIS="undef" SIGNAME="axi_iic_scl_i">
@@ -235,6 +237,77 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/adau1761_i2s_0" HWVERSION="1.0" INSTANCE="adau1761_i2s_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adau1761_i2s" VLNV="xilinx.com:module_ref:adau1761_i2s:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="word_bits" VALUE="24"/>
+        <PARAMETER NAME="Component_Name" VALUE="top_adau1761_i2s_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="proc_sys_reset_peripheral_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="proc_sys_reset" PORT="peripheral_reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="audio_in_valid" SIGIS="undef" SIGNAME="adau1761_i2s_0_audio_in_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adau1761_i2s_0" PORT="audio_out_valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="audio_in_l" RIGHT="0" SIGIS="undef" SIGNAME="adau1761_i2s_0_audio_in_l">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adau1761_i2s_0" PORT="audio_out_l"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="23" NAME="audio_in_r" RIGHT="0" SIGIS="undef" SIGNAME="adau1761_i2s_0_audio_in_r">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adau1761_i2s_0" PORT="audio_out_r"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="audio_out_valid" SIGIS="undef" SIGNAME="adau1761_i2s_0_audio_in_valid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adau1761_i2s_0" PORT="audio_in_valid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="audio_out_l" RIGHT="0" SIGIS="undef" SIGNAME="adau1761_i2s_0_audio_in_l">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adau1761_i2s_0" PORT="audio_in_l"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="audio_out_r" RIGHT="0" SIGIS="undef" SIGNAME="adau1761_i2s_0_audio_in_r">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adau1761_i2s_0" PORT="audio_in_r"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="bclk" SIGIS="undef" SIGNAME="External_Ports_ac_bclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ac_bclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="lrclk" SIGIS="undef" SIGNAME="External_Ports_ac_pblrc">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ac_pblrc"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="sdata_in" SIGIS="undef" SIGNAME="External_Ports_ac_recdat">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ac_recdat"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="sdata_out" SIGIS="undef" SIGNAME="adau1761_i2s_0_sdata_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ac_pbdat"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/axi_iic" HWVERSION="2.1" INSTANCE="axi_iic" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_iic" VLNV="xilinx.com:ip:axi_iic:2.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_iic;v=v2_1;d=pg090-axi-iic.pdf"/>
@@ -5003,7 +5076,11 @@
         <PORT DIR="I" NAME="dcm_locked" SIGIS="undef"/>
         <PORT DIR="O" NAME="mb_reset" POLARITY="ACTIVE_HIGH" SIGIS="rst"/>
         <PORT DIR="O" LEFT="0" NAME="bus_struct_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>
-        <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst" SIGNAME="proc_sys_reset_peripheral_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adau1761_i2s_0" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="proc_sys_reset_interconnect_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clk_wiz" PORT="resetn"/>
@@ -6167,6 +6244,7 @@
             <CONNECTION INSTANCE="ps7_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="ila" PORT="clk"/>
             <CONNECTION INSTANCE="clk_wiz" PORT="clk_in1"/>
+            <CONNECTION INSTANCE="adau1761_i2s_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_FCLK_RESET0_N">

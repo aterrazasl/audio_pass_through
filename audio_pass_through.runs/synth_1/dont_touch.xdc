@@ -24,10 +24,13 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_iic
 # IP: bd/top/ip/top_ps7_axi_periph_0/top_ps7_axi_periph_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_ps7_axi_periph_0 || ORIG_REF_NAME==top_ps7_axi_periph_0} -quiet] -quiet
 
-# IP: bd/top/ip/top_auto_pc_0/top_auto_pc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_auto_pc_0 || ORIG_REF_NAME==top_auto_pc_0} -quiet] -quiet
-
 # IP: bd/top/ip/top_xlconstant_0_0/top_xlconstant_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_xlconstant_0_0 || ORIG_REF_NAME==top_xlconstant_0_0} -quiet] -quiet
+
+# IP: bd/top/ip/top_adau1761_i2s_0_0/top_adau1761_i2s_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_adau1761_i2s_0_0 || ORIG_REF_NAME==top_adau1761_i2s_0_0} -quiet] -quiet
+
+# IP: bd/top/ip/top_auto_pc_0/top_auto_pc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_auto_pc_0 || ORIG_REF_NAME==top_auto_pc_0} -quiet] -quiet
 
 # XDC: c:/Git/audio_pass_through/audio_pass_through.gen/sources_1/bd/top/top_ooc.xdc

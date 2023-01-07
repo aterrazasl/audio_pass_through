@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
---Date        : Fri Jan  6 11:56:01 2023
+--Date        : Fri Jan  6 21:56:56 2023
 --Host        : USAUSLT-9KB21SI running 64-bit major release  (build 9200)
 --Command     : generate_target top.bd
 --Design      : top
@@ -614,7 +614,7 @@ entity top is
     ac_sda_t : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of top : entity is "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=9,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of top : entity is "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=10,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of top : entity is "top.hwdef";
 end top;
@@ -754,10 +754,30 @@ architecture STRUCTURE of top is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component top_xlconstant_0_0;
+  component top_adau1761_i2s_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    rst : in STD_LOGIC;
+    audio_in_valid : out STD_LOGIC;
+    audio_in_l : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    audio_in_r : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    audio_out_valid : in STD_LOGIC;
+    audio_out_l : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    audio_out_r : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    bclk : in STD_LOGIC;
+    lrclk : in STD_LOGIC;
+    sdata_in : in STD_LOGIC;
+    sdata_out : out STD_LOGIC
+  );
+  end component top_adau1761_i2s_0_0;
   signal ac_bclk_1 : STD_LOGIC;
   signal ac_pblrc_1 : STD_LOGIC;
   signal ac_recdat_1 : STD_LOGIC;
   signal ac_reclrc_1 : STD_LOGIC;
+  signal adau1761_i2s_0_audio_in_l : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal adau1761_i2s_0_audio_in_r : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal adau1761_i2s_0_audio_in_valid : STD_LOGIC;
+  signal adau1761_i2s_0_sdata_out : STD_LOGIC;
   signal axi_iic_IIC_SCL_I : STD_LOGIC;
   signal axi_iic_IIC_SCL_O : STD_LOGIC;
   signal axi_iic_IIC_SCL_T : STD_LOGIC;
@@ -767,6 +787,7 @@ architecture STRUCTURE of top is
   signal clk_wiz_clk_out1 : STD_LOGIC;
   signal proc_sys_reset_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal proc_sys_reset_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal proc_sys_reset_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -851,7 +872,6 @@ architecture STRUCTURE of top is
   signal NLW_clk_wiz_locked_UNCONNECTED : STD_LOGIC;
   signal NLW_proc_sys_reset_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_proc_sys_reset_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_proc_sys_reset_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
   attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
@@ -889,7 +909,7 @@ begin
   ac_bclk_1 <= ac_bclk;
   ac_mclk <= clk_wiz_clk_out1;
   ac_muten(0) <= xlconstant_0_dout(0);
-  ac_pbdat <= ac_recdat_1;
+  ac_pbdat <= adau1761_i2s_0_sdata_out;
   ac_pblrc_1 <= ac_pblrc;
   ac_recdat_1 <= ac_recdat;
   ac_reclrc_1 <= ac_reclrc;
@@ -899,6 +919,21 @@ begin
   ac_sda_t <= axi_iic_IIC_SDA_T;
   axi_iic_IIC_SCL_I <= ac_scl_i;
   axi_iic_IIC_SDA_I <= ac_sda_i;
+adau1761_i2s_0: component top_adau1761_i2s_0_0
+     port map (
+      audio_in_l(23 downto 0) => adau1761_i2s_0_audio_in_l(23 downto 0),
+      audio_in_r(23 downto 0) => adau1761_i2s_0_audio_in_r(23 downto 0),
+      audio_in_valid => adau1761_i2s_0_audio_in_valid,
+      audio_out_l(23 downto 0) => adau1761_i2s_0_audio_in_l(23 downto 0),
+      audio_out_r(23 downto 0) => adau1761_i2s_0_audio_in_r(23 downto 0),
+      audio_out_valid => adau1761_i2s_0_audio_in_valid,
+      bclk => ac_bclk_1,
+      clk => processing_system7_FCLK_CLK0,
+      lrclk => ac_pblrc_1,
+      rst => proc_sys_reset_peripheral_reset(0),
+      sdata_in => ac_recdat_1,
+      sdata_out => adau1761_i2s_0_sdata_out
+    );
 axi_iic: component top_axi_iic_0_0
      port map (
       gpo(0) => NLW_axi_iic_gpo_UNCONNECTED(0),
@@ -955,7 +990,7 @@ proc_sys_reset: component top_proc_sys_reset_0_0
       mb_debug_sys_rst => '0',
       mb_reset => NLW_proc_sys_reset_mb_reset_UNCONNECTED,
       peripheral_aresetn(0) => proc_sys_reset_peripheral_aresetn(0),
-      peripheral_reset(0) => NLW_proc_sys_reset_peripheral_reset_UNCONNECTED(0),
+      peripheral_reset(0) => proc_sys_reset_peripheral_reset(0),
       slowest_sync_clk => processing_system7_FCLK_CLK0
     );
 processing_system7: component top_processing_system7_0_0

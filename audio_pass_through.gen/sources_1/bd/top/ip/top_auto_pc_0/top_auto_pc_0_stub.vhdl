@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Fri Jan  6 11:59:00 2023
+-- Date        : Fri Jan  6 11:58:59 2023
 -- Host        : USAUSLT-9KB21SI running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Git/audio_pass_through/audio_pass_through.gen/sources_1/bd/top/ip/top_auto_pc_0/top_auto_pc_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top top_auto_pc_0 -prefix
+--               top_auto_pc_0_ top_auto_pc_0_stub.vhdl
 -- Design      : top_auto_pc_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Jan  6 18:16:47 2023
+| Date         : Fri Jan  6 21:59:16 2023
 | Host         : USAUSLT-9KB21SI running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb
 | Design       : top_wrapper
@@ -165,6 +165,7 @@ Table of Contents
 | top_clk_wiz_0_0            |    1 |
 | top_axi_iic_0_0            |    1 |
 | top_auto_pc_0              |    1 |
+| top_adau1761_i2s_0_0       |    1 |
 +----------------------------+------+
 
 

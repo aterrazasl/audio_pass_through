@@ -29,3 +29,5 @@ bsp reload
 bsp reload
 platform config -updatehw {C:/Git/audio_pass_through/top_wrapper.xsa}
 platform generate -domains 
+platform config -updatehw {C:/Git/audio_pass_through/top_wrapper.xsa}
+platform generate -domains 

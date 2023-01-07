@@ -1,0 +1,2194 @@
+14:53:10 INFO  : Platform repository initialization has completed.
+14:53:10 INFO  : Registering command handlers for Vitis TCF services
+14:53:10 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Git\audio_pass_through\Vitis_Workspace\temp_xsdb_launch_script.tcl
+14:53:13 INFO  : XSCT server has started successfully.
+14:53:14 INFO  : Successfully done setting XSCT server connection channel  
+14:53:14 INFO  : plnx-install-location is set to ''
+14:53:14 INFO  : Successfully done query RDI_DATADIR 
+14:53:14 INFO  : Successfully done setting workspace for the tool. 
+14:55:38 INFO  : Result from executing command 'getProjects': top_wrapper
+14:55:38 INFO  : Result from executing command 'getPlatforms': 
+14:55:38 WARN  : An unexpected exception occurred in the module 'platform project logging'
+14:55:38 INFO  : Platform 'top_wrapper' is added to custom repositories.
+14:55:51 INFO  : Platform 'top_wrapper' is added to custom repositories.
+14:56:33 INFO  : Result from executing command 'getProjects': top_wrapper
+14:56:33 INFO  : Result from executing command 'getPlatforms': top_wrapper|C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/top_wrapper.xpfm
+14:56:39 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+14:57:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:57:27 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+14:57:27 INFO  : 'jtag frequency' command is executed.
+14:57:27 INFO  : Context for 'APU' is selected.
+14:57:27 INFO  : System reset is completed.
+14:57:30 INFO  : 'after 3000' command is executed.
+14:57:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+14:57:32 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+14:57:32 INFO  : Context for 'APU' is selected.
+14:57:32 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+14:57:32 INFO  : 'configparams force-mem-access 1' command is executed.
+14:57:32 INFO  : Context for 'APU' is selected.
+14:57:32 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+14:57:34 INFO  : 'ps7_init' command is executed.
+14:57:34 INFO  : 'ps7_post_config' command is executed.
+14:57:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:35 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:57:35 INFO  : 'configparams force-mem-access 0' command is executed.
+14:57:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:57:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:35 INFO  : 'con' command is executed.
+14:57:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:57:35 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+14:58:27 INFO  : Disconnected from the channel tcfchan#3.
+14:58:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:58:28 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+14:58:28 INFO  : 'jtag frequency' command is executed.
+14:58:28 INFO  : Context for 'APU' is selected.
+14:58:28 INFO  : System reset is completed.
+14:58:31 INFO  : 'after 3000' command is executed.
+14:58:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+14:58:33 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+14:58:33 INFO  : Context for 'APU' is selected.
+14:58:33 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+14:58:33 INFO  : 'configparams force-mem-access 1' command is executed.
+14:58:33 INFO  : Context for 'APU' is selected.
+14:58:33 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+14:58:35 INFO  : 'ps7_init' command is executed.
+14:58:35 INFO  : 'ps7_post_config' command is executed.
+14:58:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:36 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:58:36 INFO  : 'configparams force-mem-access 0' command is executed.
+14:58:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:58:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:58:36 INFO  : 'con' command is executed.
+14:58:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:58:36 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+15:08:40 INFO  : Result from executing command 'removePlatformRepo': 
+15:09:13 INFO  : Result from executing command 'getProjects': top_wrapper
+15:09:13 INFO  : Result from executing command 'getPlatforms': 
+15:09:13 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+15:12:00 INFO  : No changes in MSS file content so sources will not be generated.
+16:06:26 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:06:48 INFO  : Disconnected from the channel tcfchan#4.
+16:06:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:06:49 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:06:49 INFO  : 'jtag frequency' command is executed.
+16:06:49 INFO  : Context for 'APU' is selected.
+16:06:49 INFO  : System reset is completed.
+16:06:52 INFO  : 'after 3000' command is executed.
+16:06:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:06:53 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:06:53 INFO  : Context for 'APU' is selected.
+16:06:54 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:06:54 INFO  : 'configparams force-mem-access 1' command is executed.
+16:06:54 INFO  : Context for 'APU' is selected.
+16:06:54 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:06:55 INFO  : 'ps7_init' command is executed.
+16:06:55 INFO  : 'ps7_post_config' command is executed.
+16:06:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:06:56 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:06:56 INFO  : 'configparams force-mem-access 0' command is executed.
+16:06:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:06:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:06:57 INFO  : 'con' command is executed.
+16:06:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:06:57 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:07:13 INFO  : Disconnected from the channel tcfchan#9.
+16:07:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:07:13 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:07:13 INFO  : 'jtag frequency' command is executed.
+16:07:13 INFO  : Context for 'APU' is selected.
+16:07:13 INFO  : System reset is completed.
+16:07:16 INFO  : 'after 3000' command is executed.
+16:07:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:07:18 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:07:18 INFO  : Context for 'APU' is selected.
+16:07:18 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:07:18 INFO  : 'configparams force-mem-access 1' command is executed.
+16:07:18 INFO  : Context for 'APU' is selected.
+16:07:18 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:07:20 INFO  : 'ps7_init' command is executed.
+16:07:20 INFO  : 'ps7_post_config' command is executed.
+16:07:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:07:21 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:07:21 INFO  : 'configparams force-mem-access 0' command is executed.
+16:07:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:07:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:07:22 INFO  : 'con' command is executed.
+16:07:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:07:22 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:35:33 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:35:50 INFO  : Disconnected from the channel tcfchan#10.
+16:35:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:35:50 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:35:50 INFO  : 'jtag frequency' command is executed.
+16:35:51 INFO  : Context for 'APU' is selected.
+16:35:51 INFO  : System reset is completed.
+16:35:54 INFO  : 'after 3000' command is executed.
+16:35:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:35:55 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:35:55 INFO  : Context for 'APU' is selected.
+16:35:55 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:35:55 INFO  : 'configparams force-mem-access 1' command is executed.
+16:35:55 INFO  : Context for 'APU' is selected.
+16:35:55 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:35:57 INFO  : 'ps7_init' command is executed.
+16:35:57 INFO  : 'ps7_post_config' command is executed.
+16:35:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:35:58 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:35:58 INFO  : 'configparams force-mem-access 0' command is executed.
+16:35:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:35:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:35:58 INFO  : 'con' command is executed.
+16:35:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:35:58 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:37:09 INFO  : Disconnected from the channel tcfchan#12.
+16:37:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:37:09 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:37:09 INFO  : 'jtag frequency' command is executed.
+16:37:09 INFO  : Context for 'APU' is selected.
+16:37:09 INFO  : System reset is completed.
+16:37:13 INFO  : 'after 3000' command is executed.
+16:37:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:37:14 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:37:14 INFO  : Context for 'APU' is selected.
+16:37:14 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:37:14 INFO  : 'configparams force-mem-access 1' command is executed.
+16:37:14 INFO  : Context for 'APU' is selected.
+16:37:14 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:37:16 INFO  : 'ps7_init' command is executed.
+16:37:16 INFO  : 'ps7_post_config' command is executed.
+16:37:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:37:17 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:37:17 INFO  : 'configparams force-mem-access 0' command is executed.
+16:37:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:37:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:37:18 INFO  : 'con' command is executed.
+16:37:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:37:18 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:37:21 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:37:35 INFO  : Disconnected from the channel tcfchan#13.
+16:37:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:37:36 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:37:36 INFO  : 'jtag frequency' command is executed.
+16:37:36 INFO  : Context for 'APU' is selected.
+16:37:36 INFO  : System reset is completed.
+16:37:39 INFO  : 'after 3000' command is executed.
+16:37:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:37:40 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:37:40 INFO  : Context for 'APU' is selected.
+16:37:41 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:37:41 INFO  : 'configparams force-mem-access 1' command is executed.
+16:37:41 INFO  : Context for 'APU' is selected.
+16:37:41 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:37:43 INFO  : 'ps7_init' command is executed.
+16:37:43 INFO  : 'ps7_post_config' command is executed.
+16:37:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:37:43 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:37:43 INFO  : 'configparams force-mem-access 0' command is executed.
+16:37:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:37:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:37:44 INFO  : 'con' command is executed.
+16:37:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:37:44 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:38:06 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:38:20 INFO  : Disconnected from the channel tcfchan#15.
+16:38:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:38:20 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:38:20 INFO  : 'jtag frequency' command is executed.
+16:38:20 INFO  : Context for 'APU' is selected.
+16:38:21 INFO  : System reset is completed.
+16:38:24 INFO  : 'after 3000' command is executed.
+16:38:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:38:25 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:38:25 INFO  : Context for 'APU' is selected.
+16:38:25 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:38:25 INFO  : 'configparams force-mem-access 1' command is executed.
+16:38:25 INFO  : Context for 'APU' is selected.
+16:38:25 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:38:27 INFO  : 'ps7_init' command is executed.
+16:38:27 INFO  : 'ps7_post_config' command is executed.
+16:38:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:38:28 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:38:28 INFO  : 'configparams force-mem-access 0' command is executed.
+16:38:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:38:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:38:28 INFO  : 'con' command is executed.
+16:38:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:38:28 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:40:20 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:40:35 INFO  : Disconnected from the channel tcfchan#17.
+16:40:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:40:36 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:40:36 INFO  : 'jtag frequency' command is executed.
+16:40:36 INFO  : Context for 'APU' is selected.
+16:40:36 INFO  : System reset is completed.
+16:40:39 INFO  : 'after 3000' command is executed.
+16:40:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:40:41 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:40:41 INFO  : Context for 'APU' is selected.
+16:40:41 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:40:41 INFO  : 'configparams force-mem-access 1' command is executed.
+16:40:41 INFO  : Context for 'APU' is selected.
+16:40:41 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:40:42 INFO  : 'ps7_init' command is executed.
+16:40:42 INFO  : 'ps7_post_config' command is executed.
+16:40:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:40:43 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:40:43 INFO  : 'configparams force-mem-access 0' command is executed.
+16:40:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:40:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:40:43 INFO  : 'con' command is executed.
+16:40:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:40:43 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:41:39 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:41:56 INFO  : Disconnected from the channel tcfchan#19.
+16:41:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:41:56 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:41:56 INFO  : 'jtag frequency' command is executed.
+16:41:56 INFO  : Context for 'APU' is selected.
+16:41:57 INFO  : System reset is completed.
+16:42:00 INFO  : 'after 3000' command is executed.
+16:42:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:42:01 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:42:01 INFO  : Context for 'APU' is selected.
+16:42:01 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:42:01 INFO  : 'configparams force-mem-access 1' command is executed.
+16:42:01 INFO  : Context for 'APU' is selected.
+16:42:01 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:42:03 INFO  : 'ps7_init' command is executed.
+16:42:03 INFO  : 'ps7_post_config' command is executed.
+16:42:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:42:03 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:42:03 INFO  : 'configparams force-mem-access 0' command is executed.
+16:42:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:42:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:42:04 INFO  : 'con' command is executed.
+16:42:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:42:04 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:48:36 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:48:44 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:48:57 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:49:11 INFO  : Disconnected from the channel tcfchan#21.
+16:49:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:49:11 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:49:11 INFO  : 'jtag frequency' command is executed.
+16:49:11 INFO  : Context for 'APU' is selected.
+16:49:11 INFO  : System reset is completed.
+16:49:14 INFO  : 'after 3000' command is executed.
+16:49:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:49:16 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:49:16 INFO  : Context for 'APU' is selected.
+16:49:16 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:49:16 INFO  : 'configparams force-mem-access 1' command is executed.
+16:49:16 INFO  : Context for 'APU' is selected.
+16:49:16 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:49:17 INFO  : 'ps7_init' command is executed.
+16:49:17 INFO  : 'ps7_post_config' command is executed.
+16:49:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:49:18 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:49:18 INFO  : 'configparams force-mem-access 0' command is executed.
+16:49:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:49:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:49:18 INFO  : 'con' command is executed.
+16:49:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:49:18 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:51:00 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:52:15 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:52:28 INFO  : Disconnected from the channel tcfchan#23.
+16:52:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:52:28 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:52:28 INFO  : 'jtag frequency' command is executed.
+16:52:28 INFO  : Context for 'APU' is selected.
+16:52:28 INFO  : System reset is completed.
+16:52:31 INFO  : 'after 3000' command is executed.
+16:52:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:52:33 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:52:33 INFO  : Context for 'APU' is selected.
+16:52:33 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:52:33 INFO  : 'configparams force-mem-access 1' command is executed.
+16:52:33 INFO  : Context for 'APU' is selected.
+16:52:33 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:52:35 INFO  : 'ps7_init' command is executed.
+16:52:35 INFO  : 'ps7_post_config' command is executed.
+16:52:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:52:35 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:52:35 INFO  : 'configparams force-mem-access 0' command is executed.
+16:52:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:52:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:52:36 INFO  : 'con' command is executed.
+16:52:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:52:36 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+16:53:48 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+16:54:07 INFO  : Disconnected from the channel tcfchan#24.
+16:54:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:54:07 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+16:54:07 INFO  : 'jtag frequency' command is executed.
+16:54:07 INFO  : Context for 'APU' is selected.
+16:54:07 INFO  : System reset is completed.
+16:54:10 INFO  : 'after 3000' command is executed.
+16:54:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+16:54:12 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+16:54:12 INFO  : Context for 'APU' is selected.
+16:54:12 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+16:54:12 INFO  : 'configparams force-mem-access 1' command is executed.
+16:54:12 INFO  : Context for 'APU' is selected.
+16:54:12 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+16:54:14 INFO  : 'ps7_init' command is executed.
+16:54:14 INFO  : 'ps7_post_config' command is executed.
+16:54:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:54:14 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:54:14 INFO  : 'configparams force-mem-access 0' command is executed.
+16:54:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:54:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:54:15 INFO  : 'con' command is executed.
+16:54:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:54:15 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:00:19 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:00:36 INFO  : Disconnected from the channel tcfchan#25.
+17:00:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:00:37 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:00:37 INFO  : 'jtag frequency' command is executed.
+17:00:37 INFO  : Context for 'APU' is selected.
+17:00:37 INFO  : System reset is completed.
+17:00:40 INFO  : 'after 3000' command is executed.
+17:00:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:00:41 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:00:41 INFO  : Context for 'APU' is selected.
+17:00:41 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:00:41 INFO  : 'configparams force-mem-access 1' command is executed.
+17:00:41 INFO  : Context for 'APU' is selected.
+17:00:41 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:00:44 INFO  : 'ps7_init' command is executed.
+17:00:44 INFO  : 'ps7_post_config' command is executed.
+17:00:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:00:44 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:00:44 INFO  : 'configparams force-mem-access 0' command is executed.
+17:00:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:00:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:00:45 INFO  : 'con' command is executed.
+17:00:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:00:45 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:03:45 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:04:41 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:04:52 INFO  : Disconnected from the channel tcfchan#27.
+17:04:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:04:52 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:04:52 INFO  : 'jtag frequency' command is executed.
+17:04:52 INFO  : Context for 'APU' is selected.
+17:04:52 INFO  : System reset is completed.
+17:04:55 INFO  : 'after 3000' command is executed.
+17:04:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:04:57 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:04:57 INFO  : Context for 'APU' is selected.
+17:04:57 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:04:57 INFO  : 'configparams force-mem-access 1' command is executed.
+17:04:57 INFO  : Context for 'APU' is selected.
+17:04:57 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:04:59 INFO  : 'ps7_init' command is executed.
+17:04:59 INFO  : 'ps7_post_config' command is executed.
+17:04:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:04:59 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:05:00 INFO  : 'configparams force-mem-access 0' command is executed.
+17:05:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:05:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:05:00 INFO  : 'con' command is executed.
+17:05:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:05:00 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:19:30 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:19:40 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:20:15 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:20:30 INFO  : Disconnected from the channel tcfchan#29.
+17:20:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:20:31 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:20:31 INFO  : 'jtag frequency' command is executed.
+17:20:31 INFO  : Context for 'APU' is selected.
+17:20:31 INFO  : System reset is completed.
+17:20:34 INFO  : 'after 3000' command is executed.
+17:20:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:20:35 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:20:35 INFO  : Context for 'APU' is selected.
+17:20:35 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:20:35 INFO  : 'configparams force-mem-access 1' command is executed.
+17:20:35 INFO  : Context for 'APU' is selected.
+17:20:35 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:20:37 INFO  : 'ps7_init' command is executed.
+17:20:37 INFO  : 'ps7_post_config' command is executed.
+17:20:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:20:38 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:20:38 INFO  : 'configparams force-mem-access 0' command is executed.
+17:20:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:20:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:20:38 INFO  : 'con' command is executed.
+17:20:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:20:38 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:22:39 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:22:56 INFO  : Disconnected from the channel tcfchan#32.
+17:22:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:22:56 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:22:56 INFO  : 'jtag frequency' command is executed.
+17:22:56 INFO  : Context for 'APU' is selected.
+17:22:56 INFO  : System reset is completed.
+17:22:59 INFO  : 'after 3000' command is executed.
+17:23:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:23:01 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:23:01 INFO  : Context for 'APU' is selected.
+17:23:01 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:23:01 INFO  : 'configparams force-mem-access 1' command is executed.
+17:23:01 INFO  : Context for 'APU' is selected.
+17:23:01 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:23:03 INFO  : 'ps7_init' command is executed.
+17:23:03 INFO  : 'ps7_post_config' command is executed.
+17:23:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:23:04 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:23:04 INFO  : 'configparams force-mem-access 0' command is executed.
+17:23:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:23:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:23:04 INFO  : 'con' command is executed.
+17:23:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:23:04 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:32:37 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:33:58 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:34:05 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:34:19 INFO  : Disconnected from the channel tcfchan#34.
+17:34:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:34:19 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:34:19 INFO  : 'jtag frequency' command is executed.
+17:34:19 INFO  : Context for 'APU' is selected.
+17:34:19 INFO  : System reset is completed.
+17:34:22 INFO  : 'after 3000' command is executed.
+17:34:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:34:24 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:34:24 INFO  : Context for 'APU' is selected.
+17:34:24 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:34:24 INFO  : 'configparams force-mem-access 1' command is executed.
+17:34:24 INFO  : Context for 'APU' is selected.
+17:34:24 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:34:25 INFO  : 'ps7_init' command is executed.
+17:34:26 INFO  : 'ps7_post_config' command is executed.
+17:34:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:34:26 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:34:26 INFO  : 'configparams force-mem-access 0' command is executed.
+17:34:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:34:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:34:27 INFO  : 'con' command is executed.
+17:34:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:34:27 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:37:09 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:37:15 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:37:30 INFO  : Disconnected from the channel tcfchan#37.
+17:37:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:37:31 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:37:31 INFO  : 'jtag frequency' command is executed.
+17:37:31 INFO  : Context for 'APU' is selected.
+17:37:31 INFO  : System reset is completed.
+17:37:34 INFO  : 'after 3000' command is executed.
+17:37:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:37:35 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:37:35 INFO  : Context for 'APU' is selected.
+17:37:36 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:37:36 INFO  : 'configparams force-mem-access 1' command is executed.
+17:37:36 INFO  : Context for 'APU' is selected.
+17:37:36 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:37:38 INFO  : 'ps7_init' command is executed.
+17:37:38 INFO  : 'ps7_post_config' command is executed.
+17:37:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:37:38 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:37:39 INFO  : 'configparams force-mem-access 0' command is executed.
+17:37:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:37:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:37:39 INFO  : 'con' command is executed.
+17:37:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:37:39 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:38:55 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:39:11 INFO  : Disconnected from the channel tcfchan#39.
+17:39:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:39:11 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:39:11 INFO  : 'jtag frequency' command is executed.
+17:39:11 INFO  : Context for 'APU' is selected.
+17:39:12 INFO  : System reset is completed.
+17:39:15 INFO  : 'after 3000' command is executed.
+17:39:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:39:16 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:39:16 INFO  : Context for 'APU' is selected.
+17:39:16 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:39:16 INFO  : 'configparams force-mem-access 1' command is executed.
+17:39:16 INFO  : Context for 'APU' is selected.
+17:39:16 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:39:19 INFO  : 'ps7_init' command is executed.
+17:39:19 INFO  : 'ps7_post_config' command is executed.
+17:39:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:39:19 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:39:20 INFO  : 'configparams force-mem-access 0' command is executed.
+17:39:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:39:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:39:20 INFO  : 'con' command is executed.
+17:39:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:39:20 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:43:36 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:43:51 INFO  : Disconnected from the channel tcfchan#41.
+17:43:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:43:52 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:43:52 INFO  : 'jtag frequency' command is executed.
+17:43:52 INFO  : Context for 'APU' is selected.
+17:43:52 INFO  : System reset is completed.
+17:43:55 INFO  : 'after 3000' command is executed.
+17:43:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:43:57 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:43:57 INFO  : Context for 'APU' is selected.
+17:43:57 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:43:57 INFO  : 'configparams force-mem-access 1' command is executed.
+17:43:57 INFO  : Context for 'APU' is selected.
+17:43:57 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:43:59 INFO  : 'ps7_init' command is executed.
+17:43:59 INFO  : 'ps7_post_config' command is executed.
+17:43:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:43:59 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:44:00 INFO  : 'configparams force-mem-access 0' command is executed.
+17:44:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:44:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:44:00 INFO  : 'con' command is executed.
+17:44:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:44:00 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:51:36 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:51:56 INFO  : Disconnected from the channel tcfchan#43.
+17:51:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:51:56 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:51:56 INFO  : 'jtag frequency' command is executed.
+17:51:56 INFO  : Context for 'APU' is selected.
+17:51:56 INFO  : System reset is completed.
+17:51:59 INFO  : 'after 3000' command is executed.
+17:52:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:52:01 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:52:01 INFO  : Context for 'APU' is selected.
+17:52:01 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:52:01 INFO  : 'configparams force-mem-access 1' command is executed.
+17:52:01 INFO  : Context for 'APU' is selected.
+17:52:01 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:52:03 INFO  : 'ps7_init' command is executed.
+17:52:03 INFO  : 'ps7_post_config' command is executed.
+17:52:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:52:04 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:52:04 INFO  : 'configparams force-mem-access 0' command is executed.
+17:52:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:52:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:52:04 INFO  : 'con' command is executed.
+17:52:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:52:04 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+17:54:17 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+17:54:35 INFO  : Disconnected from the channel tcfchan#45.
+17:54:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:54:35 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+17:54:35 INFO  : 'jtag frequency' command is executed.
+17:54:35 INFO  : Context for 'APU' is selected.
+17:54:35 INFO  : System reset is completed.
+17:54:38 INFO  : 'after 3000' command is executed.
+17:54:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+17:54:40 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+17:54:40 INFO  : Context for 'APU' is selected.
+17:54:40 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+17:54:40 INFO  : 'configparams force-mem-access 1' command is executed.
+17:54:40 INFO  : Context for 'APU' is selected.
+17:54:40 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+17:54:42 INFO  : 'ps7_init' command is executed.
+17:54:42 INFO  : 'ps7_post_config' command is executed.
+17:54:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:54:43 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:54:43 INFO  : 'configparams force-mem-access 0' command is executed.
+17:54:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:54:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:54:43 INFO  : 'con' command is executed.
+17:54:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:54:43 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:08:06 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:09:10 INFO  : Disconnected from the channel tcfchan#47.
+18:09:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:09:10 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:09:10 INFO  : 'jtag frequency' command is executed.
+18:09:10 INFO  : Context for 'APU' is selected.
+18:09:10 INFO  : System reset is completed.
+18:09:13 INFO  : 'after 3000' command is executed.
+18:09:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:09:15 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:09:15 INFO  : Context for 'APU' is selected.
+18:09:15 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:09:15 INFO  : 'configparams force-mem-access 1' command is executed.
+18:09:15 INFO  : Context for 'APU' is selected.
+18:09:15 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:09:17 INFO  : 'ps7_init' command is executed.
+18:09:17 INFO  : 'ps7_post_config' command is executed.
+18:09:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:09:18 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:09:18 INFO  : 'configparams force-mem-access 0' command is executed.
+18:09:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:09:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:09:19 INFO  : 'con' command is executed.
+18:09:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:09:19 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:09:38 INFO  : Disconnected from the channel tcfchan#49.
+18:09:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:09:38 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:09:38 INFO  : 'jtag frequency' command is executed.
+18:09:38 INFO  : Context for 'APU' is selected.
+18:09:38 INFO  : System reset is completed.
+18:09:41 INFO  : 'after 3000' command is executed.
+18:09:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:09:43 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:09:43 INFO  : Context for 'APU' is selected.
+18:09:43 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:09:43 INFO  : 'configparams force-mem-access 1' command is executed.
+18:09:43 INFO  : Context for 'APU' is selected.
+18:09:43 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:09:45 INFO  : 'ps7_init' command is executed.
+18:09:45 INFO  : 'ps7_post_config' command is executed.
+18:09:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:09:46 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:09:46 INFO  : 'configparams force-mem-access 0' command is executed.
+18:09:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:09:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:09:46 INFO  : 'con' command is executed.
+18:09:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:09:46 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:09:58 INFO  : Disconnected from the channel tcfchan#50.
+18:09:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:09:59 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:09:59 INFO  : 'jtag frequency' command is executed.
+18:09:59 INFO  : Context for 'APU' is selected.
+18:09:59 INFO  : System reset is completed.
+18:10:02 INFO  : 'after 3000' command is executed.
+18:10:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:10:03 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:10:03 INFO  : Context for 'APU' is selected.
+18:10:04 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:10:04 INFO  : 'configparams force-mem-access 1' command is executed.
+18:10:04 INFO  : Context for 'APU' is selected.
+18:10:04 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:10:06 INFO  : 'ps7_init' command is executed.
+18:10:06 INFO  : 'ps7_post_config' command is executed.
+18:10:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:10:07 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:10:07 INFO  : 'configparams force-mem-access 0' command is executed.
+18:10:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:10:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:10:07 INFO  : 'con' command is executed.
+18:10:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:10:07 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:11:03 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:11:25 INFO  : Disconnected from the channel tcfchan#51.
+18:11:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:11:26 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:11:26 INFO  : 'jtag frequency' command is executed.
+18:11:26 INFO  : Context for 'APU' is selected.
+18:11:26 INFO  : System reset is completed.
+18:11:29 INFO  : 'after 3000' command is executed.
+18:11:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:11:30 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:11:31 INFO  : Context for 'APU' is selected.
+18:11:31 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:11:31 INFO  : 'configparams force-mem-access 1' command is executed.
+18:11:31 INFO  : Context for 'APU' is selected.
+18:11:31 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:11:33 INFO  : 'ps7_init' command is executed.
+18:11:33 INFO  : 'ps7_post_config' command is executed.
+18:11:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:11:33 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:11:34 INFO  : 'configparams force-mem-access 0' command is executed.
+18:11:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:11:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:11:34 INFO  : 'con' command is executed.
+18:11:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:11:34 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:20:30 INFO  : Hardware specification for platform project 'top_wrapper' is updated.
+18:20:41 INFO  : Result from executing command 'getProjects': top_wrapper
+18:20:41 INFO  : Result from executing command 'getPlatforms': top_wrapper|C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/top_wrapper.xpfm
+18:20:41 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:20:48 INFO  : The hardware specification used by project 'audio_pass_through' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+18:20:48 INFO  : The file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through\_ide\bitstream\top_wrapper.bit' stored in project is removed.
+18:20:48 INFO  : The updated bitstream files are copied from platform to folder 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through\_ide\bitstream' in project 'audio_pass_through'.
+18:20:48 INFO  : The file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through\_ide\psinit\ps7_init.tcl' stored in project is removed.
+18:20:56 INFO  : The updated ps init files are copied from platform to folder 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through\_ide\psinit' in project 'audio_pass_through'.
+18:21:16 INFO  : Disconnected from the channel tcfchan#53.
+18:21:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:21:16 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:21:16 INFO  : 'jtag frequency' command is executed.
+18:21:16 INFO  : Context for 'APU' is selected.
+18:21:16 INFO  : System reset is completed.
+18:21:19 INFO  : 'after 3000' command is executed.
+18:21:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:21:21 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:21:21 INFO  : Context for 'APU' is selected.
+18:21:21 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:21:21 INFO  : 'configparams force-mem-access 1' command is executed.
+18:21:21 INFO  : Context for 'APU' is selected.
+18:21:21 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:21:23 INFO  : 'ps7_init' command is executed.
+18:21:23 INFO  : 'ps7_post_config' command is executed.
+18:21:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:21:24 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:21:24 INFO  : 'configparams force-mem-access 0' command is executed.
+18:21:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:21:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:21:24 INFO  : 'con' command is executed.
+18:21:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:21:24 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:30:46 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:31:07 INFO  : Disconnected from the channel tcfchan#56.
+18:31:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:31:07 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:31:07 INFO  : 'jtag frequency' command is executed.
+18:31:07 INFO  : Context for 'APU' is selected.
+18:31:07 INFO  : System reset is completed.
+18:31:10 INFO  : 'after 3000' command is executed.
+18:31:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:31:12 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:31:12 INFO  : Context for 'APU' is selected.
+18:31:12 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:31:12 INFO  : 'configparams force-mem-access 1' command is executed.
+18:31:12 INFO  : Context for 'APU' is selected.
+18:31:12 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:31:15 INFO  : 'ps7_init' command is executed.
+18:31:15 INFO  : 'ps7_post_config' command is executed.
+18:31:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:15 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:31:15 INFO  : 'configparams force-mem-access 0' command is executed.
+18:31:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:31:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:31:16 INFO  : 'con' command is executed.
+18:31:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:31:16 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:46:12 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:46:37 INFO  : Disconnected from the channel tcfchan#58.
+18:46:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:46:38 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:46:38 INFO  : 'jtag frequency' command is executed.
+18:46:38 INFO  : Context for 'APU' is selected.
+18:46:38 INFO  : System reset is completed.
+18:46:41 INFO  : 'after 3000' command is executed.
+18:46:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:46:42 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:46:42 INFO  : Context for 'APU' is selected.
+18:46:42 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:46:42 INFO  : 'configparams force-mem-access 1' command is executed.
+18:46:43 INFO  : Context for 'APU' is selected.
+18:46:43 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:46:44 INFO  : 'ps7_init' command is executed.
+18:46:44 INFO  : 'ps7_post_config' command is executed.
+18:46:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:46:45 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:46:45 INFO  : 'configparams force-mem-access 0' command is executed.
+18:46:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:46:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:46:45 INFO  : 'con' command is executed.
+18:46:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:46:45 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:51:30 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:51:46 INFO  : Disconnected from the channel tcfchan#60.
+18:51:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:51:46 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:51:46 INFO  : 'jtag frequency' command is executed.
+18:51:46 INFO  : Context for 'APU' is selected.
+18:51:46 INFO  : System reset is completed.
+18:51:49 INFO  : 'after 3000' command is executed.
+18:51:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:51:51 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:51:51 INFO  : Context for 'APU' is selected.
+18:51:51 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:51:51 INFO  : 'configparams force-mem-access 1' command is executed.
+18:51:51 INFO  : Context for 'APU' is selected.
+18:51:51 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:51:53 INFO  : 'ps7_init' command is executed.
+18:51:53 INFO  : 'ps7_post_config' command is executed.
+18:51:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:51:54 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:51:54 INFO  : 'configparams force-mem-access 0' command is executed.
+18:51:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:51:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:51:55 INFO  : 'con' command is executed.
+18:51:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:51:55 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:55:02 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:55:23 INFO  : Disconnected from the channel tcfchan#62.
+18:55:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:55:23 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:55:23 INFO  : 'jtag frequency' command is executed.
+18:55:23 INFO  : Context for 'APU' is selected.
+18:55:23 INFO  : System reset is completed.
+18:55:26 INFO  : 'after 3000' command is executed.
+18:55:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:55:28 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:55:28 INFO  : Context for 'APU' is selected.
+18:55:28 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:55:28 INFO  : 'configparams force-mem-access 1' command is executed.
+18:55:28 INFO  : Context for 'APU' is selected.
+18:55:28 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:55:30 INFO  : 'ps7_init' command is executed.
+18:55:30 INFO  : 'ps7_post_config' command is executed.
+18:55:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:30 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:55:30 INFO  : 'configparams force-mem-access 0' command is executed.
+18:55:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:55:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:31 INFO  : 'con' command is executed.
+18:55:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:55:31 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:56:32 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:56:53 INFO  : Disconnected from the channel tcfchan#64.
+18:56:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:56:54 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:56:54 INFO  : 'jtag frequency' command is executed.
+18:56:54 INFO  : Context for 'APU' is selected.
+18:56:54 INFO  : System reset is completed.
+18:56:57 INFO  : 'after 3000' command is executed.
+18:56:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:56:58 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:56:58 INFO  : Context for 'APU' is selected.
+18:56:58 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:56:58 INFO  : 'configparams force-mem-access 1' command is executed.
+18:56:58 INFO  : Context for 'APU' is selected.
+18:56:58 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:57:00 INFO  : 'ps7_init' command is executed.
+18:57:00 INFO  : 'ps7_post_config' command is executed.
+18:57:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:01 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:57:01 INFO  : 'configparams force-mem-access 0' command is executed.
+18:57:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:57:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:02 INFO  : 'con' command is executed.
+18:57:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:57:02 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+18:58:08 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+18:58:21 INFO  : Disconnected from the channel tcfchan#66.
+18:58:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:58:22 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+18:58:22 INFO  : 'jtag frequency' command is executed.
+18:58:22 INFO  : Context for 'APU' is selected.
+18:58:22 INFO  : System reset is completed.
+18:58:25 INFO  : 'after 3000' command is executed.
+18:58:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+18:58:26 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+18:58:26 INFO  : Context for 'APU' is selected.
+18:58:27 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+18:58:27 INFO  : 'configparams force-mem-access 1' command is executed.
+18:58:27 INFO  : Context for 'APU' is selected.
+18:58:27 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+18:58:28 INFO  : 'ps7_init' command is executed.
+18:58:28 INFO  : 'ps7_post_config' command is executed.
+18:58:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:58:29 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:58:29 INFO  : 'configparams force-mem-access 0' command is executed.
+18:58:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:58:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:58:29 INFO  : 'con' command is executed.
+18:58:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:58:29 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:00:52 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:01:07 INFO  : Disconnected from the channel tcfchan#68.
+19:01:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:01:08 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:01:08 INFO  : 'jtag frequency' command is executed.
+19:01:08 INFO  : Context for 'APU' is selected.
+19:01:08 INFO  : System reset is completed.
+19:01:11 INFO  : 'after 3000' command is executed.
+19:01:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:01:12 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:01:12 INFO  : Context for 'APU' is selected.
+19:01:13 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:01:13 INFO  : 'configparams force-mem-access 1' command is executed.
+19:01:13 INFO  : Context for 'APU' is selected.
+19:01:13 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:01:14 INFO  : 'ps7_init' command is executed.
+19:01:14 INFO  : 'ps7_post_config' command is executed.
+19:01:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:01:14 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:01:15 INFO  : 'configparams force-mem-access 0' command is executed.
+19:01:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:01:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:01:15 INFO  : 'con' command is executed.
+19:01:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:01:15 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:09:41 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:09:55 INFO  : Disconnected from the channel tcfchan#70.
+19:09:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:09:56 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:09:56 INFO  : 'jtag frequency' command is executed.
+19:09:56 INFO  : Context for 'APU' is selected.
+19:09:56 INFO  : System reset is completed.
+19:09:59 INFO  : 'after 3000' command is executed.
+19:09:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:10:00 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:10:01 INFO  : Context for 'APU' is selected.
+19:10:01 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:10:01 INFO  : 'configparams force-mem-access 1' command is executed.
+19:10:01 INFO  : Context for 'APU' is selected.
+19:10:01 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:10:03 INFO  : 'ps7_init' command is executed.
+19:10:03 INFO  : 'ps7_post_config' command is executed.
+19:10:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:10:03 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:10:03 INFO  : 'configparams force-mem-access 0' command is executed.
+19:10:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:10:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:10:04 INFO  : 'con' command is executed.
+19:10:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:10:04 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:11:16 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:12:55 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:13:22 INFO  : Disconnected from the channel tcfchan#72.
+19:13:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:13:23 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:13:23 INFO  : 'jtag frequency' command is executed.
+19:13:23 INFO  : Context for 'APU' is selected.
+19:13:23 INFO  : System reset is completed.
+19:13:26 INFO  : 'after 3000' command is executed.
+19:13:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:13:27 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:13:27 INFO  : Context for 'APU' is selected.
+19:13:27 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:13:27 INFO  : 'configparams force-mem-access 1' command is executed.
+19:13:27 INFO  : Context for 'APU' is selected.
+19:13:27 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:13:29 INFO  : 'ps7_init' command is executed.
+19:13:29 INFO  : 'ps7_post_config' command is executed.
+19:13:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:13:30 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:13:30 INFO  : 'configparams force-mem-access 0' command is executed.
+19:13:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:13:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:13:30 INFO  : 'con' command is executed.
+19:13:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:13:30 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:19:03 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:19:21 INFO  : Disconnected from the channel tcfchan#75.
+19:19:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:19:21 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:19:21 INFO  : 'jtag frequency' command is executed.
+19:19:21 INFO  : Context for 'APU' is selected.
+19:19:21 INFO  : System reset is completed.
+19:19:24 INFO  : 'after 3000' command is executed.
+19:19:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:19:26 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:19:26 INFO  : Context for 'APU' is selected.
+19:19:26 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:19:26 INFO  : 'configparams force-mem-access 1' command is executed.
+19:19:26 INFO  : Context for 'APU' is selected.
+19:19:26 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:19:28 INFO  : 'ps7_init' command is executed.
+19:19:28 INFO  : 'ps7_post_config' command is executed.
+19:19:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:19:29 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:19:29 INFO  : 'configparams force-mem-access 0' command is executed.
+19:19:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:19:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:19:29 INFO  : 'con' command is executed.
+19:19:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:19:29 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:21:04 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:21:20 INFO  : Disconnected from the channel tcfchan#77.
+19:21:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:21:20 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:21:20 INFO  : 'jtag frequency' command is executed.
+19:21:20 INFO  : Context for 'APU' is selected.
+19:21:20 INFO  : System reset is completed.
+19:21:23 INFO  : 'after 3000' command is executed.
+19:21:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:21:25 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:21:25 INFO  : Context for 'APU' is selected.
+19:21:25 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:21:25 INFO  : 'configparams force-mem-access 1' command is executed.
+19:21:25 INFO  : Context for 'APU' is selected.
+19:21:25 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:21:27 INFO  : 'ps7_init' command is executed.
+19:21:27 INFO  : 'ps7_post_config' command is executed.
+19:21:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:21:28 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:21:28 INFO  : 'configparams force-mem-access 0' command is executed.
+19:21:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:21:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:21:28 INFO  : 'con' command is executed.
+19:21:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:21:28 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:26:30 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:26:44 INFO  : Disconnected from the channel tcfchan#79.
+19:26:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:26:44 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:26:44 INFO  : 'jtag frequency' command is executed.
+19:26:44 INFO  : Context for 'APU' is selected.
+19:26:44 INFO  : System reset is completed.
+19:26:47 INFO  : 'after 3000' command is executed.
+19:26:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:26:49 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:26:49 INFO  : Context for 'APU' is selected.
+19:26:49 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:26:49 INFO  : 'configparams force-mem-access 1' command is executed.
+19:26:49 INFO  : Context for 'APU' is selected.
+19:26:49 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:26:50 INFO  : 'ps7_init' command is executed.
+19:26:51 INFO  : 'ps7_post_config' command is executed.
+19:26:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:26:51 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:26:51 INFO  : 'configparams force-mem-access 0' command is executed.
+19:26:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:26:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:26:51 INFO  : 'con' command is executed.
+19:26:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:26:51 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:29:36 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:29:50 INFO  : Disconnected from the channel tcfchan#81.
+19:29:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:29:50 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:29:50 INFO  : 'jtag frequency' command is executed.
+19:29:50 INFO  : Context for 'APU' is selected.
+19:29:51 INFO  : System reset is completed.
+19:29:54 INFO  : 'after 3000' command is executed.
+19:29:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:29:55 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:29:55 INFO  : Context for 'APU' is selected.
+19:29:55 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:29:55 INFO  : 'configparams force-mem-access 1' command is executed.
+19:29:55 INFO  : Context for 'APU' is selected.
+19:29:55 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:29:57 INFO  : 'ps7_init' command is executed.
+19:29:57 INFO  : 'ps7_post_config' command is executed.
+19:29:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:29:58 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:29:58 INFO  : 'configparams force-mem-access 0' command is executed.
+19:29:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:29:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:29:58 INFO  : 'con' command is executed.
+19:29:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:29:58 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:30:37 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:31:02 INFO  : Disconnected from the channel tcfchan#83.
+19:31:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:31:03 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:31:03 INFO  : 'jtag frequency' command is executed.
+19:31:03 INFO  : Context for 'APU' is selected.
+19:31:03 INFO  : System reset is completed.
+19:31:06 INFO  : 'after 3000' command is executed.
+19:31:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:31:07 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:31:07 INFO  : Context for 'APU' is selected.
+19:31:07 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:31:07 INFO  : 'configparams force-mem-access 1' command is executed.
+19:31:07 INFO  : Context for 'APU' is selected.
+19:31:07 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:31:09 INFO  : 'ps7_init' command is executed.
+19:31:09 INFO  : 'ps7_post_config' command is executed.
+19:31:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:31:10 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:31:10 INFO  : 'configparams force-mem-access 0' command is executed.
+19:31:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:31:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:31:10 INFO  : 'con' command is executed.
+19:31:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:31:10 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+19:32:22 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+19:32:42 INFO  : Disconnected from the channel tcfchan#85.
+19:32:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:32:43 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+19:32:43 INFO  : 'jtag frequency' command is executed.
+19:32:43 INFO  : Context for 'APU' is selected.
+19:32:43 INFO  : System reset is completed.
+19:32:46 INFO  : 'after 3000' command is executed.
+19:32:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+19:32:47 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+19:32:47 INFO  : Context for 'APU' is selected.
+19:32:47 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+19:32:47 INFO  : 'configparams force-mem-access 1' command is executed.
+19:32:47 INFO  : Context for 'APU' is selected.
+19:32:47 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+19:32:49 INFO  : 'ps7_init' command is executed.
+19:32:49 INFO  : 'ps7_post_config' command is executed.
+19:32:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:32:50 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:32:50 INFO  : 'configparams force-mem-access 0' command is executed.
+19:32:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:32:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:32:50 INFO  : 'con' command is executed.
+19:32:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:32:50 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+21:06:54 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+21:07:19 INFO  : Disconnected from the channel tcfchan#87.
+21:07:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:07:25 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+21:07:25 INFO  : 'jtag frequency' command is executed.
+21:07:25 INFO  : Context for 'APU' is selected.
+21:07:25 INFO  : System reset is completed.
+21:07:28 INFO  : 'after 3000' command is executed.
+21:07:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+21:07:29 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+21:07:29 INFO  : Context for 'APU' is selected.
+21:07:29 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+21:07:29 INFO  : 'configparams force-mem-access 1' command is executed.
+21:07:29 INFO  : Context for 'APU' is selected.
+21:07:29 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+21:07:31 INFO  : 'ps7_init' command is executed.
+21:07:31 INFO  : 'ps7_post_config' command is executed.
+21:07:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:07:32 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:07:32 INFO  : 'configparams force-mem-access 0' command is executed.
+21:07:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:07:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:07:32 INFO  : 'con' command is executed.
+21:07:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:07:32 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+21:11:22 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+21:16:43 INFO  : Checking for BSP changes to sync application flags for project 'audio_pass_through'...
+21:17:02 INFO  : Disconnected from the channel tcfchan#89.
+21:17:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:17:03 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+21:17:03 INFO  : 'jtag frequency' command is executed.
+21:17:03 INFO  : Context for 'APU' is selected.
+21:17:03 INFO  : System reset is completed.
+21:17:06 INFO  : 'after 3000' command is executed.
+21:17:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+21:17:07 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+21:17:07 INFO  : Context for 'APU' is selected.
+21:17:08 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+21:17:08 INFO  : 'configparams force-mem-access 1' command is executed.
+21:17:08 INFO  : Context for 'APU' is selected.
+21:17:08 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+21:17:09 INFO  : 'ps7_init' command is executed.
+21:17:09 INFO  : 'ps7_post_config' command is executed.
+21:17:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:17:10 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:17:10 INFO  : 'configparams force-mem-access 0' command is executed.
+21:17:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:17:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:17:11 INFO  : 'con' command is executed.
+21:17:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:17:11 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'
+21:17:25 INFO  : Disconnected from the channel tcfchan#92.
+21:17:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:17:26 INFO  : Jtag cable 'Digilent Zybo 210279786029A' is selected.
+21:17:26 INFO  : 'jtag frequency' command is executed.
+21:17:26 INFO  : Context for 'APU' is selected.
+21:17:26 INFO  : System reset is completed.
+21:17:29 INFO  : 'after 3000' command is executed.
+21:17:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}' command is executed.
+21:17:30 INFO  : Device configured successfully with "C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit"
+21:17:30 INFO  : Context for 'APU' is selected.
+21:17:31 INFO  : Hardware design and registers information is loaded from 'C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa'.
+21:17:31 INFO  : 'configparams force-mem-access 1' command is executed.
+21:17:31 INFO  : Context for 'APU' is selected.
+21:17:31 INFO  : Sourcing of 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl' is done.
+21:17:33 INFO  : 'ps7_init' command is executed.
+21:17:33 INFO  : 'ps7_post_config' command is executed.
+21:17:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:17:33 INFO  : The application 'C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:17:34 INFO  : 'configparams force-mem-access 0' command is executed.
+21:17:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279786029A" && level==0 && jtag_device_ctx=="jsn-Zybo-210279786029A-13722093-0"}
+fpga -file C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/hw/top_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:17:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:17:34 INFO  : 'con' command is executed.
+21:17:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:17:34 INFO  : Launch script is exported to file 'C:\Git\audio_pass_through\Vitis_Workspace\audio_pass_through_system\_ide\scripts\systemdebugger_audio_pass_through_system_standalone.tcl'

@@ -1,0 +1,10 @@
+21:16:45 **** Incremental Build of configuration Debug for project audio_pass_through_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 55146 C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/top_wrapper.xpfm standalone_ps7_cortexa9_0 C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through_system/Debug/system.bif
+sdcard_gen --xpfm C:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/top_wrapper.xpfm --sys_config top_wrapper --bif C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through_system/Debug/system.bif --bitstream C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit --elf C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/Debug/audio_pass_through.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through/_ide/bitstream/top_wrapper.bit
+Running C:/Xilinx/Vitis/2021.2/bin/bootgen  -image C:/Git/audio_pass_through/Vitis_Workspace/audio_pass_through_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+21:16:54 Build Finished (took 9s.0ms)
+

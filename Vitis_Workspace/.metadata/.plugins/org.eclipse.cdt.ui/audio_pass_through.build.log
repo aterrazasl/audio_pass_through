@@ -1,0 +1,25 @@
+21:16:44 **** Incremental Build of configuration Debug for project audio_pass_through ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/adau1761_iic_config.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/adau1761_iic_config.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/sw/top_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/adau1761_iic_config.d" -MT"src/adau1761_iic_config.o" -o "src/adau1761_iic_config.o" "../src/adau1761_iic_config.c"
+'Finished building: ../src/adau1761_iic_config.c'
+' '
+'Building target: audio_pass_through.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Git/audio_pass_through/Vitis_Workspace/top_wrapper/export/top_wrapper/sw/top_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "audio_pass_through.elf"  ./src/adau1761_iic_config.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_pass_through.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_pass_through.elf  |tee "audio_pass_through.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27877	   1160	  22680	  51717	   ca05	audio_pass_through.elf
+'Finished building: audio_pass_through.elf.size'
+' '
+
+21:16:45 Build Finished (took 1s.229ms)
+

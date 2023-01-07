@@ -1,0 +1,195 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sleep.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "xstatus.h"
+#include "xiic.h"
+
+// AXI IIC IP's XPAR_<IIC_instance>_DEVICE_ID value from xparameters.h
+#define IIC_DEVICE_ID XPAR_IIC_0_DEVICE_ID
+
+// Base address for the AXI IIC IP
+#define IIC_BASEADDR XPAR_IIC_0_BASEADDR
+
+// I2C slave address of the SSM2603 chip
+#define I2C_ADDR 0b0011010
+
+// Instance handle for the AXI IIC IP
+XIic iic;
+
+/**
+ *
+ * Perform self-test of the AXI IIC IP
+ *
+ * @return XST_SUCCESS on pass, else XST_FAILURE
+ *
+ */
+int iic_self_test()
+{
+    int status;
+    XIic_Config *config;
+
+    // Initialize the IIC driver
+    config = XIic_LookupConfig(IIC_DEVICE_ID);
+    if (config == NULL) {
+        xil_printf("XIic_LookupConfig failed\n");
+        return XST_FAILURE;
+    }
+
+    status = XIic_CfgInitialize(&iic, config, config->BaseAddress);
+    if (status != XST_SUCCESS) {
+        xil_printf("XIic_CfgInitialize failed\n");
+        return XST_FAILURE;
+    }
+
+    // Perform a self-test of IP
+    status = XIic_SelfTest(&iic);
+    if (status != XST_SUCCESS) {
+        xil_printf("XIic_SelfTest failed\n");
+        return XST_FAILURE;
+    }
+
+    return XST_SUCCESS;
+}
+
+
+/**
+ *
+ * Write to registers in the I2C slave
+ *
+ * @param reg_addr The 16-bit slave register address
+ * @param data Array of bytes to write
+ * @param bytes The number of bytes in <data>
+ *
+ * @return XST_SUCCESS, else XST_FAILURE
+ *
+ */
+int iic_write_reg_8(u8 reg_addr, u16 data) {
+
+    u8 buf[2];
+    buf[0] = reg_addr << 1;
+    buf[0] = buf[0] | (0x01 & (u8)(data >> 8));
+    buf[1] = (u8)data;
+
+
+    int sent_bytes = XIic_Send(IIC_BASEADDR, I2C_ADDR, buf,  2, XIIC_STOP);
+
+
+    if (sent_bytes !=  2)
+    {
+        xil_printf("iic_write_reg() failed\r\n");
+        xil_printf("sent_bytes = %d\r\n", sent_bytes);
+        return XST_FAILURE;
+    }
+
+    return XST_SUCCESS;
+}
+
+/**
+ *
+ * Read from registers in the I2C slave
+ *
+ * @param reg_addr The 16-bit slave register address
+ * @param data Array to store the read bytes in
+ * @param bytes The number of bytes to read
+ *
+ * @return XST_SUCCESS, else XST_FAILURE
+ *
+ */
+int iic_read_reg_8(u8 reg_addr, u8 *data, int bytes) {
+
+    u8 buf[2];
+    buf[0] = reg_addr << 1; // Address MSBs
+    buf[0] = buf[0] & 0xFE; // Address LSBs
+
+    int sent_bytes = XIic_Send(IIC_BASEADDR, I2C_ADDR, buf, 1, XIIC_REPEATED_START);
+    if (sent_bytes != 1)
+    {
+        xil_printf("iic_read_reg() failed\r\n");
+        xil_printf("sent_bytes = %d\r\n", sent_bytes);
+        return XST_FAILURE;
+    }
+
+    int recv_bytes = XIic_Recv(IIC_BASEADDR, I2C_ADDR, data, bytes, XIIC_STOP);
+    if (recv_bytes != bytes)
+    {
+        xil_printf("iic_read_reg() failed to read data\r\n");
+        xil_printf("recv_bytes = %d\r\n", recv_bytes);
+        return XST_FAILURE;
+    }
+
+    return XST_SUCCESS;
+}
+
+
+void Configure_Audio_Codec(void){
+
+    u8 data[128];
+    memset(data, 0, 128);
+
+    iic_write_reg_8(0x0f, 0x000); // R15 Reset SSM2603 chip
+    iic_write_reg_8(0x06, 0b000010000); // R6 enables power everything except out
+
+
+    iic_write_reg_8(0x07, 0b001001010); // R7 Enables Master mode and set data word 24bits and I2S mode
+
+    iic_write_reg_8(0x00, 0x117); // R0 unmute right and left ADC channels
+    iic_write_reg_8(0x02, 0x179); // R2 Sets 0dB DAC volume
+    iic_write_reg_8(0x04, 0b000010010); // R4 Selects DAC to outpu mixer and set Line in, mute MIC
+    iic_write_reg_8(0x05, 0b000000001); // R5 enables de-emphasis and enables HPF
+
+    iic_write_reg_8(0x12, 0b000000011); // R18 Enables Noise gate
+    //iic_write_reg_8(0x10, 0b110101011); // R16 Enables automatic level control
+
+
+    iic_write_reg_8(0x06, 0b000000010); // R6 enables everything except MIC power
+    usleep(50000);	//Sleep time required
+    iic_write_reg_8(0x09, 0b000000001); // R9 Activates Digital core
+
+
+    print_all_regs();
+
+}
+
+void print_all_regs(){
+	int i;
+
+	#define REG_NUM_SIZE 14
+
+	u8 regs[REG_NUM_SIZE] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0f, 0x10, 0x11, 0x12};
+    u8 data[128];
+    u16 recv;
+    memset(data, 0, 128);
+
+    for (i = 0; i < REG_NUM_SIZE; i++){
+        iic_read_reg_8(regs[i], data, 2);
+        recv = data[1] << 8;
+        recv = recv | data[0];
+        xil_printf("R%d reg =\t0x%03x\r\n", regs[i],recv);
+    }
+
+}
+
+
+int main()
+{
+    // Setup UART for debugging
+    init_platform();
+
+    xil_printf("\r\n\r\nstarting\r\n");
+
+    // Check that we can communicate with the AXI IIC IP
+    if (iic_self_test() != XST_SUCCESS)
+    {
+        xil_printf("iic_self_test() failed");
+        return XST_FAILURE;
+    }
+    Configure_Audio_Codec();
+
+
+    xil_printf("\r\n\r\ndone\r\n");
+
+    cleanup_platform();
+    return XST_SUCCESS;
+}
